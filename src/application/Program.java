@@ -21,8 +21,19 @@ public class Program {
 		
 		ArrayList<Employee> employees = new ArrayList(); 
 
-		System.out.print("Enter the number of employees: ");
-		int numberLoops = sc.nextInt();
+		
+		
+		Integer numberLoops = null;
+		
+		while (numberLoops == null) {
+			System.out.print("Enter the number of employees: "); 
+			String valueNumber = sc.nextLine();
+			try {
+				numberLoops = Integer.parseInt(valueNumber);
+			}catch (NumberFormatException e) {
+				System.out.println("Entrada inválida. Por favor, digite um número inteiro válido.");
+			}
+		}
 		
 		for(int i = 0; i < numberLoops ; i++) {
 			
